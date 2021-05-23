@@ -1,13 +1,13 @@
 const account = require('../models/account');
 
 //check user exists in db
-const authenticate = async ({id, authId}) => {
+const authenticate = async ({username, authId}) => {
 
-    count = await account.count({ where: { id: id, auth_id: authId } });
-    if (count != 0) {
-        return true;
+    user = await account.findOne({ where: { username: username, auth_id: authId }, attributes: ['id'] });
+    if (user) {
+        return user;
     } else {
-        return false;
+        return null;
     }
 }
 

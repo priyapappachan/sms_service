@@ -12,15 +12,15 @@ const authenticate = async (req, res, next) => {
     // verify auth credentials
     const base64Credentials =  req.headers.authorization.split(' ')[1];
     const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
-    const [id, authId] = credentials.split(':');
-    account = await userService.authenticate({ id, authId });
-    if (!account) {
-        console.log(account);
+    const [username, authId] = credentials.split(':');
+    user = await userService.authenticate({ username, authId });
+    if (!user) {
+        console.log(user);
         return res.status(403).json({ message: 'account not found' });
     }
 
     // attach account id to request object
-    req.accountId = id
+    req.accountId = user.id
 
     next();
 
