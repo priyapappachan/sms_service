@@ -35,8 +35,14 @@
 API endpoint : ec2-3-97-16-52.ca-central-1.compute.amazonaws.com
 
 Port : 3000
-  
+
+Test Data : https://docs.google.com/spreadsheets/d/1-ArSg7OntGlZqQaDOzKy4iGAnLlFOHungyknNDBQRb0/edit#gid=0 
+
 Example API calls
+
+Find username and password for basic authentication in the above shared excel sheet. Password is auth_id. 
+
+
  1.  POST  ec2-3-97-16-52.ca-central-1.compute.amazonaws.com:3000/inbound/sms
 
 `
