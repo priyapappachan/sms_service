@@ -3,7 +3,7 @@ const redisPort = 6379
 const client = asyncRedis.createClient(redisPort);
 
 async function addCount(key) {
-    return await client.setex(key, 86400, 1);
+    return await client.setex(key, 10, 1);
 }
 
 const getCount = async (key) => {
@@ -14,8 +14,9 @@ const getCount = async (key) => {
 }
 
 async function updateCount(key, count) {
-    return await client.set(key, count + 1);
-    
+    const ttl = await client.ttl(key);
+    console.log('ttl : ' + ttl);
+    return await client.setex(key, ttl, count + 1);
 }
 
 async function checkKeyExists(key) {
