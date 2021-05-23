@@ -13,7 +13,9 @@
 
 ### Restore the dump into DB server
 
->psql -U postgres postgres \i <path to sql dump>
+>sudo -i -u postgres psql
+
+>psql -U postgres postgres \i path_to_sql_file
   
 ### Install redis for cache 
 >apt install redis-server
@@ -31,6 +33,7 @@
   
 ## API details 
 API endpoint : ec2-3-97-16-52.ca-central-1.compute.amazonaws.com
+
 Port : 3000
   
 Example API calls
