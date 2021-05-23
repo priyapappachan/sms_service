@@ -1,0 +1,25 @@
+{
+  "name": "sms-service",
+  "version": "1.0.0",
+  "description": "sms service",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest --config ./jest.config.json"
+  },
+  "author": "priya",
+  "license": "",
+  "dependencies": {
+    "async-redis": "^1.1.7",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "pg": "^8.6.0",
+    "redis": "^3.1.2",
+    "sequelize": "^6.6.2",
+    "sequelize-mock": "^0.10.2",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
