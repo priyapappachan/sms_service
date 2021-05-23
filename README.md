@@ -5,6 +5,7 @@
 ### Install node js 
 
 >apt install nodejs
+
 >apt install npm
 
 ### Install postgres
